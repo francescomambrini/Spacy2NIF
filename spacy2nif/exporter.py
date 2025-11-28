@@ -157,6 +157,9 @@ class NIFExporter:
         if self.layers.get("ner"):
             self._export_entities(doc, g)
 
+        g.bind('nif', str(self.NIF))
+        g.bind('conll', str(self.CONLL))
+
         return g
 
     
