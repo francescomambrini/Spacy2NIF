@@ -324,7 +324,7 @@ class NIFExporter:
         """
         for e in doc.ents:
             uri = self._build_uri(e)
-            graph.add((uri, RDF.type, self.NIF.Span))
+            graph.add((uri, RDF.type, self.NIF.Phrase))
             graph.add((uri, RDF.type, self.NIF.EntityOccurrence))
             graph.add((uri, self.NIF.literalAnnotation, Literal(e.label_)))
             graph.add((uri, self.NIF.beginIndex, Literal(e.start_char)))
