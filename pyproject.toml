@@ -1,0 +1,49 @@
+[build-system]
+# Setuptools is the most stable backend for simple projects
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spacy2nif"
+version = "0.1.0"
+description = "Convert spaCy Doc objects to RDF/NIF 2.1."
+authors = [
+    { name = "Francesco Mambrini", email = "f.mambrini@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+# Required dependencies for the exporter
+dependencies = [
+    "spacy>=3.3",
+    "rdflib>=6.0",
+]
+
+# These classifiers help tools (and users) understand the compatibility
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.optional-dependencies]
+# Students can install extras with:
+#   pip install spacy2nif[conll]
+conll = ["spacy-conll>=3.3"]
+
+[project.urls]
+Homepage = "https://github.com/francescomambrini/Spacy2NIF"
+Source = "https://github.com/francescomambrini/Spacy2NIF"
+Issues = "https://github.com/francescomambrini/Spacy2NIF/issues"
+
+[tool.setuptools]
+# Automatically include the Python package directory
+include-package-data = true
+
+[tool.setuptools.packages.find]
+# Tells setuptools to package the spacy2nif/ directory
+where = ["."]
